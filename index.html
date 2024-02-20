@@ -51,6 +51,7 @@
         };
         
         //defining the maker style
+        //Challenge 1: changing the marker style to a diamond
         const simpleMarkerSymbol = {
           type: "simple-marker",
           style: "diamond",
@@ -84,7 +85,7 @@
          //adding the point to the graphicsLayer
          graphicsLayer.add(pointGraphic);
 
-         // Define a pop-up for usaeduLayer
+         //Define a pop-up for usaeduLayer
          const popupEduusa = {
             "title": "EDUs",
             "content": "<b>Name:</b> {INSTNM}<br><b>Total Enrollment:</b> {INSTSIZE}<br><b>City:</b> {CITY}<br><b>Zip:</b> {ZIP}<br>"
@@ -147,7 +148,7 @@
 
         });
 
-        //adding the feature layer to the map
+        //Challenge 4: adding the feature layer to the map
         map.add(airportLayer);
 
       //Challenge 5: adding heliports to the map
@@ -173,6 +174,7 @@ const heliportLayer = new FeatureLayer({
 
 map.add(heliportLayer);
 
+//Challenge 2: Adding a polyline and polygon to the map
      //Polyline outlining 1st Street Bridge
      
      require(["esri/geometry/Polyline", "esri/Graphic", "esri/symbols/SimpleLineSymbol", "esri/Color"], 
@@ -186,7 +188,7 @@ map.add(heliportLayer);
     spatialReference: { wkid: 4326 }
   });
 
-  // Add the polyline to the map
+  // Add the polyline to the map (NOTE: I tried to change the colors/thickness and it would not work. Do you have any suggestion as to why?)
   let polylinegraphic = new Graphic({
     geometry: polyline,
     symbol: new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([100,0,255]), 15)
@@ -210,7 +212,7 @@ require(["esri/geometry/Polygon", "esri/Graphic", "esri/symbols/SimpleFillSymbol
     spatialReference: { wkid: 4326 }
   });
 
-  // Add the polygon to the map
+  // Add the polygon to the map (NOTE: still could not change the color of the polygon.)
   let graphic = new Graphic({
     geometry: polygon,
     symbol: new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, 
