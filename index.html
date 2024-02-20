@@ -150,6 +150,27 @@
         //adding the feature layer to the map
         map.add(airportLayer);
 
+      //Challenge 5: adding heliports to the map
+const heliportRenderer = new SimpleRenderer({
+  symbol: new PictureMarkerSymbol({
+    url: "outline_flight_land_black_24dp.png", // URL to the icon image
+    width: "18px",
+    height: "18px"
+  })
+});
+
+const heliportLayer = new FeatureLayer({
+  url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports/FeatureServer",
+  renderer: heliportRenderer, // Use the custom renderer
+
+  definitionExpression: "Fac_Type = 'HELIPORT'", // Filter for heliports
+
+  labelingInfo: [airportLabels] // You might want to create different labels for heliports
+});
+
+map.add(heliportLayer);
+
+      
 //C2: polyline and polygon
 
 
