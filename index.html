@@ -87,15 +87,15 @@
          // Define a pop-up for usaeduLayer
          const popupEduusa = {
             "title": "EDUs",
-            "content": "<b>Name:</b> {INSTNM}<br><b>Total Enrollment:</b> {INSTSIZE}<br>"
+            "content": "<b>Name:</b> {INSTNM}<br><b>Total Enrollment:</b> {INSTSIZE}<br><b>City:</b> {CITY}<br><b>Zip:</b> {ZIP}<br>"
         }
 
          //adding the const for the feature layer
          const usaeduLayer = new FeatureLayer({
           url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Colleges_and_Universities_View/FeatureServer",
 
-          //adding the popup here
-          outFields: ["INSTNM","INSTSIZE"],
+          //adding the popup here + Challenge 3 to add more attributes
+          outFields: ["INSTNM","INSTSIZE", "CITY", "ZIP"],
           popupTemplate: popupEduusa
         });
 
@@ -150,7 +150,7 @@
         //adding the feature layer to the map
         map.add(airportLayer);
 
-/////*************************
+//C2: polyline and polygon
 
 
 
