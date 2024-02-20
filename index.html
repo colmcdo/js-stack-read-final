@@ -62,7 +62,7 @@
           }
         };
 // ************ polyline with to paths with m-values (note that the 2nd path does not have m-values defined)
-let paths = [
+const paths = [
  [  // first path
   [-97.06138,32.837,5],
   [-97.06133,32.836,6],
@@ -73,7 +73,7 @@ let paths = [
  ]
 ];
 
-let line = new Polyline({
+const line = new Polyline({
   hasZ: false,
   hasM: true,
   paths: paths,
