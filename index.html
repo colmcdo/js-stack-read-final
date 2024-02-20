@@ -175,7 +175,19 @@ map.add(heliportLayer);
 
       
 //C2: polyline and polygon
-
+//C2: polyline and polygon
+require(["esri/geometry/Polyline"], function(Polyline) {
+  const polyline = new Polyline({
+    hasZ: false,
+    hasM: false,
+    paths: [
+      [-97.7431, 30.2672], // Point 1
+      [-97.7441, 30.2682], // Point 2
+      [-97.7421, 30.2672]  // Point 3
+      // Add more points as needed
+    ],
+    spatialReference: { wkid: 4326 }
+  });
 
 
 
