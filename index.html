@@ -61,25 +61,7 @@
             width: 1
           }
         };
-// ************ polyline with to paths with m-values (note that the 2nd path does not have m-values defined)
-const paths = [
- [  // first path
-  [-97.06138,32.837,5],
-  [-97.06133,32.836,6],
-  [-97.06124,32.834,7]
- ], [  // second path
-  [-97.06326,32.759],
-  [-97.06298,32.755]
- ]
-];
 
-const line = new Polyline({
-  hasZ: false,
-  hasM: true,
-  paths: paths,
-  spatialReference: { wkid: 4326 }
-
-  // ******************
 });
         //defining popup properties
         const popupTemplate = {
@@ -171,6 +153,26 @@ const line = new Polyline({
         //adding the feature layer to the map
         map.add(airportLayer);
 
+    // ************ polyline with to paths with m-values (note that the 2nd path does not have m-values defined)
+const paths = [
+ [  // first path
+  [-97.06138,32.837,5],
+  [-97.06133,32.836,6],
+  [-97.06124,32.834,7]
+ ], [  // second path
+  [-97.06326,32.759],
+  [-97.06298,32.755]
+ ]
+];
+
+const line = new Polyline({
+  hasZ: false,
+  hasM: true,
+  paths: paths,
+  spatialReference: { wkid: 4326 }
+
+  // ******************
+    
     });
   </script>
 
