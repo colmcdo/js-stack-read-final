@@ -173,17 +173,16 @@ const heliportLayer = new FeatureLayer({
 
 map.add(heliportLayer);
 
-     //Polyline outlining bridge at center of map
+     //Polyline outlining 1st Street Bridge
      
      require(["esri/geometry/Polyline", "esri/Graphic", "esri/symbols/SimpleLineSymbol", "esri/Color"], 
 (Polyline, Graphic, SimpleLineSymbol, Color) => {
   let polyline = new Polyline({
     paths: [
-      // Replace these coordinates with the actual coordinates of the Texas Capitol
-      [-97.756849, 30.265054],
-      [-97.756333, 30.266518],
-      
-    ],
+      // coordinates of 1st street bridge
+      [-97.748315, 30.262052],
+      [-97.747689, 30.263680],
+          ],
     spatialReference: { wkid: 4326 }
   });
 
