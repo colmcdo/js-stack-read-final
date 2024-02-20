@@ -23,12 +23,9 @@
       "esri/layers/GraphicsLayer",
 
       //adding in the module for the feature layers
-      "esri/layers/FeatureLayer",
+      "esri/layers/FeatureLayer"
 
-      // adding editor widget
-      "esri/widgets/Editor"
-
-    ], function (esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer, Editor) {
+    ], function (esriConfig, Map, MapView, Graphic, GraphicsLayer, FeatureLayer) {
 
       esriConfig.apiKey = "AAPK9decdd6558d24937ac6614a6238a4349xJI9Du-3z4SyrQbfMmyLq4QXJjnxMWHpXGYgRVkG2Zj30pXtLr7MOAzKvkUj6KeH";
       const map = new Map({
@@ -46,7 +43,7 @@
         const graphicsLayer = new GraphicsLayer();
         map.add(graphicsLayer);
 
-        //defining the geometry of the point
+        //defining the geomeotry of the point
         const point = { //Create a point
           type: "point",
           longitude: -97.750689,    //long lat of Stevie Ray Vaughan Statue
@@ -152,57 +149,7 @@
         //adding the feature layer to the map
         map.add(airportLayer);
 
-   // Change the symbol for your myAirports layer to an icon.
-        //setting up the icon
-        const airportRenderer2 = {
-        "type": "simple",
-        "symbol": {
-          "type": "picture-marker",
-          "url": "outline_place_black_24dp.png",
-          "width": "18px",
-          "height": "18px"
-        }
-      }
-        
-       //adding the const for the feature layer
-      const myAirports = new FeatureLayer({
-      url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/My_Airports_cmm/FeatureServer",
-      renderer: airportRenderer2,
- 
-        //adding the popup here
-      outFields: ["AirportCode"],});
-
-        //adding the feature layer to the map
-      map.add(myAirports);
-
-
-   
-      
-
-
-
-
-      // Add a label to your myAirport showing the Airport code.
-
-      
- 
-        // Set the point layer's LayerInfo (it means: the only layer we want to be editable is myAirports)
-        const pointInfos = {
-        layer: myAirports
-        }
-        
-        // Begin Editor constructor
-        const editor = new Editor({
-        view: view,
-        layerInfos: [pointInfos]
-        }); // End Editor constructorr
-
-        // Add the widget to the view
-        view.ui.add(editor, "top-right");
-
-
     });
-
   </script>
 
   <!-- css to make a full screen map -->
