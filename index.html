@@ -158,7 +158,7 @@
         "type": "simple",
         "symbol": {
           "type": "picture-marker",
-          "url": "outline_flight_land_black_24dp.png", //using different icon
+          "url": "outline_flight_land_black_24dp.png", //using different icon -- I used airplane landing because there is no heliport icon
           "width": "18px",
           "height": "18px"
         }
@@ -169,7 +169,7 @@ const heliportLayer = new FeatureLayer({
 
   definitionExpression: "Fac_Type = 'HELIPORT'", // Filter for heliports
 
-  labelingInfo: [airportLabels] //same labelling system as for airports.
+  labelingInfo: [airportLabels] //same labeling system as for airports.
 });
 
 map.add(heliportLayer);
@@ -191,7 +191,7 @@ map.add(heliportLayer);
   // Add the polyline to the map (NOTE: I tried to change the colors/thickness and it would not work. Do you have any suggestion as to why?)
   let polylinegraphic = new Graphic({
     geometry: polyline,
-    symbol: new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([100,0,255]), 15)
+    symbol: new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([100,0,255]), 6)
   });
   graphicsLayer.add(polylinegraphic);
   map.add(polylinegraphic);
