@@ -152,12 +152,12 @@
 
       //Challenge 5: adding heliports to the map
 
- //setting up the HELIPORTS icon
+ //setting up the HELIPORTS icon -- Same process as airports
         const heliportRenderer = {
         "type": "simple",
         "symbol": {
           "type": "picture-marker",
-          "url": "outline_flight_land_black_24dp.png",
+          "url": "outline_flight_land_black_24dp.png", //using different icon
           "width": "18px",
           "height": "18px"
         }
@@ -168,7 +168,7 @@ const heliportLayer = new FeatureLayer({
 
   definitionExpression: "Fac_Type = 'HELIPORT'", // Filter for heliports
 
-  labelingInfo: [airportLabels] //
+  labelingInfo: [airportLabels] //same labelling system as for airports.
 });
 
 map.add(heliportLayer);
