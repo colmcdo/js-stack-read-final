@@ -197,9 +197,31 @@ map.add(heliportLayer);
   map.add(polylinegraphic);
 });
 
+//Polygon outlining Texas Capitol
+require(["esri/geometry/Polygon", "esri/Graphic", "esri/symbols/SimpleFillSymbol", "esri/symbols/SimpleLineSymbol", "esri/Color"], 
+(Polygon, Graphic, SimpleFillSymbol, SimpleLineSymbol, Color) => {
+  let polygon = new Polygon({
+    rings: [
+      // Replace these coordinates with the actual coordinates of the Texas Capitol
+      [-97.7431, 30.2672],
+      [-97.7431, 30.2673],
+      [-97.7432, 30.2673],
+      [-97.7432, 30.2672],
+      [-97.7431, 30.2672] // Close the polygon by repeating the first point
+    ],
+    spatialReference: { wkid: 4326 }
+  });
 
-
-
+  // Add the polygon to the map
+  // You would need to have a reference to the GraphicsLayer
+  let graphic = new Graphic({
+    geometry: polygon,
+    symbol: new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, 
+      new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255,0,0]), 2), 
+      new Color([255,255,0,0.25]))
+  });
+  graphicsLayer.add(graphic);
+});
 
 
 
