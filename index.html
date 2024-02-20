@@ -190,18 +190,18 @@ map.add(heliportLayer);
   // Add the polyline to the map
   let polylinegraphic = new Graphic({
     geometry: polyline,
-    symbol: new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255,0,0]), 5)
+    symbol: new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([9,0,255]), 15)
   });
   graphicsLayer.add(polylinegraphic);
   map.add(polylinegraphic);
 });
 
-//Polygon outlining Texas Capitol
+//Polygon outlining Republic Square
 require(["esri/geometry/Polygon", "esri/Graphic", "esri/symbols/SimpleFillSymbol", "esri/symbols/SimpleLineSymbol", "esri/Color"], 
 (Polygon, Graphic, SimpleFillSymbol, SimpleLineSymbol, Color) => {
   let polygon = new Polygon({
     rings: [
-      // Replace these coordinates with the actual coordinates of the Texas Capitol
+      // coordinates of republic square
       [-97.747671, 30.268383],
       [-97.746740, 30.268104],
       [-97.747105, 30.267265],
@@ -212,12 +212,11 @@ require(["esri/geometry/Polygon", "esri/Graphic", "esri/symbols/SimpleFillSymbol
   });
 
   // Add the polygon to the map
-  // You would need to have a reference to the GraphicsLayer
   let graphic = new Graphic({
     geometry: polygon,
     symbol: new SimpleFillSymbol(SimpleFillSymbol.STYLE_SOLID, 
-      new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255,0,0]), 2), 
-      new Color([255,255,0,0.25]))
+      new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255,179,0]), 2), 
+      new Color([255,179,0,0.25]))
   });
   graphicsLayer.add(graphic);
 });
