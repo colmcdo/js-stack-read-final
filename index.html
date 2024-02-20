@@ -103,7 +103,7 @@
         map.add(usaeduLayer);
 
 
-        //setting up the icon
+        //setting up the AIRPORTS icon
         const airportRenderer = {
         "type": "simple",
         "symbol": {
@@ -151,21 +151,24 @@
         map.add(airportLayer);
 
       //Challenge 5: adding heliports to the map
-const heliportRenderer = new SimpleRenderer({
-  symbol: new PictureMarkerSymbol({
-    url: "outline_flight_land_black_24dp.png", // URL to the icon image
-    width: "18px",
-    height: "18px"
-  })
-});
 
+ //setting up the HELIPORTS icon
+        const heliportRenderer = {
+        "type": "simple",
+        "symbol": {
+          "type": "picture-marker",
+          "url": "outline_flight_land_black_24dp.png",
+          "width": "18px",
+          "height": "18px"
+        }
+      }
 const heliportLayer = new FeatureLayer({
   url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports/FeatureServer",
   renderer: heliportRenderer, // Use the custom renderer
 
   definitionExpression: "Fac_Type = 'HELIPORT'", // Filter for heliports
 
-  labelingInfo: [airportLabels] // You might want to create different labels for heliports
+  labelingInfo: [airportLabels] //
 });
 
 map.add(heliportLayer);
