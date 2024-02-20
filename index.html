@@ -173,22 +173,21 @@ const heliportLayer = new FeatureLayer({
 
 map.add(heliportLayer);
 
-     //Polyline outlining Texas Capitol
+     //Polyline outlining bridge at center of map
      
-     require(["esri/geometry/Polyline"], (Polyline) => {
+     require(["esri/geometry/Polyline", "esri/Graphic", "esri/symbols/SimpleLineSymbol", "esri/Color"], 
+(Polyline, Graphic, SimpleLineSymbol, Color) => {
   let polyline = new Polyline({
     paths: [
-      // 
-      [-97.7431, 30.2672],
-      [-97.7431, 30.2673],
-      [-97.7432, 30.2673],
-      [-97.7432, 30.2672]
+      // Replace these coordinates with the actual coordinates of the Texas Capitol
+      [-97.756849, 30.265054],
+      [-97.756333, 30.266518],
+      
     ],
     spatialReference: { wkid: 4326 }
   });
 
   // Add the polyline to the map
-  // reference  the GraphicsLayer and the SimpleLineSymbol
   let polylinegraphic = new Graphic({
     geometry: polyline,
     symbol: new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255,0,0]), 2)
